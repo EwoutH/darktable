@@ -6,7 +6,9 @@ environment:
     - CFLAGS: /WX
       CXXFLAGS: /WX
 
-install: cmake . -G "Visual Studio 16 2019" -A x64
+install:
+ - mkdir build && cd build
+ - cmake .. -G "Visual Studio 16 2019" -A x64
 
 build:
   project: darktable.sln
