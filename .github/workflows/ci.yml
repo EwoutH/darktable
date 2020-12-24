@@ -4,10 +4,9 @@ on: [push, pull_request]
 jobs:
   macOS:
     name: macOS.${{ matrix.compiler.compiler }}.${{ matrix.target }}
-    needs: Linux
     runs-on: macos-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         compiler:
           - { compiler: XCode,   CC: cc, CXX: c++ }
